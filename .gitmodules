@@ -1,0 +1,9 @@
+[submodule ".vim/bundle/repeat"]
+	path = .vim/bundle/repeat
+	url = https://tpope.io/vim/repeat.git
+[submodule ".vim/bundle/surround"]
+	path = .vim/bundle/surround
+	url = https://tpope.io/vim/surround.git
+[submodule ".vim/bundle/emmet-vim"]
+	path = .vim/bundle/emmet-vim
+	url = https://github.com/mattn/emmet-vim.git
