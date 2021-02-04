@@ -1,7 +1,15 @@
 # Use vim as editor
 export VISUAL=vim
 export EDITOR="$VISUAL"
+alias editor="$EDITOR"
+alias edit="editor"
 
+# zshrc
+export PROFILE="~/.zshrc"
+alias profile="editor $PROFILE"
+alias reload="source $PROFILE"
+
+# make ls colours work well with dark themes
 eval `dircolors ~/.dircolors`
 
 # No bell
@@ -9,7 +17,26 @@ unsetopt beep                   # no bell on error
 unsetopt hist_beep              # no bell on error in history
 unsetopt list_beep              # no bell on ambiguous completion
 
+# 1password
+opon() {
+if [[ -z $OP_SESSION_my ]]; then
+  eval $(op signin my)
+    fi
+}
+
+opoff() {
+  op signout
+  unset OP_SESSION_my
+}
+
+getpwd() {
+  opon
+  op get item "$1" --fields password
+  opoff
+}
+
 # WSL
+alias explorer="explorer.exe"
 alias open="cmd.exe /C start"
 cdw () {
     cd $(wslpath -u $1)
