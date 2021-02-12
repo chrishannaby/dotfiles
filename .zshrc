@@ -17,6 +17,9 @@ unsetopt beep                   # no bell on error
 unsetopt hist_beep              # no bell on error in history
 unsetopt list_beep              # no bell on ambiguous completion
 
+# use volta to manage node versions
+export VOLTA_HOME=~/.volta
+
 # 1password
 opon() {
 if [[ -z $OP_SESSION_my ]]; then
@@ -83,3 +86,5 @@ alias gst='git status'
 
 # Starship prompt
 eval "$(starship init zsh)"
+export VOLTA_HOME="$HOME/.volta"
+export PATH="$VOLTA_HOME/bin:$PATH"
